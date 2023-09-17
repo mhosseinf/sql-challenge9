@@ -100,7 +100,9 @@ FROM
     dept_manager AS dm
 INNER JOIN employees AS e ON e.emp_no = dm.emp_no
 INNER JOIN departments AS d ON dm.dept_no = d.dept_no
-INNER JOIN titles AS ti ON e.emp_title_id = ti.title_id;
+INNER JOIN titles AS ti ON e.emp_title_id = ti.title_id
+ORDER BY d.dept_no DESC;
+
 
 -- 4-List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
 
@@ -158,7 +160,7 @@ SELECT
     COUNT(*) AS frequency_count
 FROM employees
 GROUP BY last_name 
-ORDER BY frequency_count DESC, last_;
+ORDER BY frequency_count DESC, last_name;
 
 
 
