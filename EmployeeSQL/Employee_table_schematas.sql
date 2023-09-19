@@ -1,3 +1,7 @@
+-- Step 1: Set the datestyle temporarily for the current session
+SET datestyle = 'SQL,MDY';
+
+
 -- 1. Create a Departments Table
 CREATE TABLE departments (
     dept_no VARCHAR(4) PRIMARY KEY NOT NULL,
@@ -17,9 +21,6 @@ CREATE TABLE titles (
 SELECT * from titles;
 
 
--- Step 1: Set the datestyle temporarily for the current session
-SET datestyle TO 'MDY';
-
 -- Step 2: Create the "employees" table
 CREATE TABLE employees (
     emp_no INT PRIMARY KEY NOT NULL,
@@ -33,13 +34,8 @@ CREATE TABLE employees (
 );
 
 
-
--- Step3: Revert datestyle to 'ISO'
-SET datestyle TO 'ISO, MDY';
-
 -- Display "employees" table
 SELECT * from employees;
-
 
 -- 4. Create a Salaries Table
 CREATE TABLE salaries (
@@ -49,7 +45,6 @@ CREATE TABLE salaries (
 
 -- Display "Salaries" table
 SELECT * from salaries;
-
 
 -- 5. Create a Department Employees (dept_emp) Table
 CREATE TABLE dept_emp (
@@ -63,6 +58,7 @@ CREATE TABLE dept_emp (
 
 -- Display "Department Employees" (dept_emp) Table
 SELECT * from dept_emp;
+
 
 -- 6. Create a Department Managers (dept_manager) Table
 CREATE TABLE dept_manager (
